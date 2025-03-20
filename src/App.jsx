@@ -1,11 +1,35 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Login from './pages/Login'
+import Navbar from './components/Navbar'
+import Dashboard from './pages/Dashboard'
+import Customers from './pages/Customers'
+import Dealers from './pages/Dealers'
+import Quotations from './pages/Quotations'
+import Reports from './pages/Reports'
+import Settings from './pages/Settings'
+import Sidebar from './components/Sidebar'
+
 
 function App() {
   return (
-    <div className='container mx-auto text-center shadow-lg rounded bg-gray-200 p-4'>
-      <h1 className=' text-blue-500 text-xl '>Hello React.</h1>
-      <p className='text-red-400 italic '> I'm using Vite + Taiwind CSS verion 3 for this project.</p>
-    </div>
+    <Router>
+      <Navbar />
+      <div className='flex'>
+        <Sidebar />
+        <main className='flex-grow p-4'>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/customers' element={<Customers />} />
+            <Route path='/dealers' element={<Dealers />} />
+            <Route path='/quotations' element={<Quotations />} />
+            <Route path='/reports' element={<Reports />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   )
 }
 
