@@ -1,6 +1,9 @@
 import React from 'react'
 
 function Table({headers, data}) {
+    // this is a reusable component which will be used to display data in a table format
+    // it accepts two props: headers and data
+    // can be used to render data of both Dealers and Customers.
   return (
     <div className='overflow-x-auto my-2'>
         <table className='min-w-full divide-y divide-gray-200'>

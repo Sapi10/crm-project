@@ -6,12 +6,15 @@ function Customers() {
   const headers = ["Name", "Email", "Phone"]
 
   const [isModalOpen, setIsModalOpen] = React.useState(false)
-  
+  // this state will help in opening and closing the modal
 
   const data = [
     ['John Doe', 'john@example.com', '123-456-7890' ],
     ['Jane Smith', 'jane@example.com', '098-765-4321' ]
 ]
+    // a dummy data which we have passed to the table component
+    // this data will be displayed in the table
+    
     return (
         <div className='p-4'>
             <h2 className='text-xl font-bold mb-4'>Customers</h2>

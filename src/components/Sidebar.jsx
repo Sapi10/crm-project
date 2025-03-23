@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 function Sidebar() {
   return (
     <aside className='bg-gray-700 text-white p-4 w-64 min-h-screen hidden md:block'>
@@ -23,6 +24,7 @@ function Sidebar() {
             <Link className='hover:text-gray-300' to='/settings'>
                 Settings
             </Link>
+            
         </nav>
     </aside>
   )

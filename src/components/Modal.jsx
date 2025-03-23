@@ -1,6 +1,11 @@
 import React from 'react'
 
 function Modal({isOpen, onClose, title, children}) {
+    // this component is used to diplay the modal
+    // based on the data or props provided by pages
+    // isOpen will be true if the modal is open
+    // onClose will be a function to close the modal
+
     if(!isOpen) 
         return null
     

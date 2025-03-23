@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Logout from './Logout'
 
 function Navbar() {
   return (
@@ -30,6 +31,7 @@ function Navbar() {
             <Link className='hover:text-gray-300' to='/settings'>
                 Settings
             </Link>
+            <Logout />
         </div>
     </nav>
   )

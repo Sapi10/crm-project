@@ -1,17 +1,38 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { loginSuccess } from '../redux/actions/userAction'
+import { useDispatch } from 'react-redux'
 
 function Login() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [error, setError] = React.useState('')
+    const [status, setStatus] = React.useState("idle")
+
 
     const handleSubmit = (e) =>{
         e.preventDefault ();
 
         if(email === 'admin@test.com' && password === 'password'){
-            navigate('/dashboard')
+            const userData = {
+                id : 1,
+                email : "admin@test.com",
+                token : 'dummy-token'
+            } // dummy user data 
+         
+            // we store the token in the local storage
+            // we will use this token to authenticate the user
+            localStorage.setItem('authToken', userData.token)
+
+            // we dispatch the loginSuccess action with the userData
+            dispatch(loginSuccess(userData))
+
+            // after login success, navigate to dashboard
+            // replace: true will replace the current url in the history
+            // so that the user cannot go back to the login page
+            navigate('/dashboard', {replace: true})
         }
         else{
             setError('Invalid email or password')
@@ -97,9 +118,11 @@ function Login() {
                     <div className='flex items-center justify-between'>
                         <button 
                             type='submit'
+                            disabled={status === "submitting"}
                             className='bg-white w-full hover:bg-blue-700 hover:text-white text-blue-500 font-bold py-4 mt-5 uppercase font-sans tracking-widest px-4 rounded focus:outline-none focus:ring-2 focus:ring-gray-600 '
                             >
-                            Login
+                            
+                            {status === "submitting" ? "Logging in..." : "Log in"}
                         </button>
 
                     </div>
