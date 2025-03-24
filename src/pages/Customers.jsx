@@ -17,7 +17,7 @@ function Customers() {
     
     return (
         <div className='p-4'>
-            <h2 className='text-xl font-bold mb-4'>Customers</h2>
+            <h2 className='text-2xl font-bold mb-4'>Customers</h2>
             <button 
                 onClick={() => setIsModalOpen(true)}
                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
@@ -33,7 +33,7 @@ function Customers() {
                         Name:
                         <input 
                             type='text' 
-                            className='w-full p-2 border rounded mt-1'
+                            className='w-full p-2 border rounded my-2'
                             placeholder='Enter Customer Name'
                         /> 
                     </label>
@@ -41,7 +41,7 @@ function Customers() {
                         Email:
                         <input 
                             type='email' 
-                            className='w-full p-2 border rounded mt-1'
+                            className='w-full p-2 border rounded my-2'
                             placeholder='Enter Customer Email'
                         /> 
                     </label>
@@ -49,7 +49,7 @@ function Customers() {
                         Phone:
                         <input 
                             type='number' 
-                            className='w-full p-2 border rounded mt-1'
+                            className='w-full p-2 border rounded my-2'
                             placeholder='Enter Customer Phone No.'
                         /> 
                     </label>
@@ -57,7 +57,7 @@ function Customers() {
                     <div className='mt-4 flex justify-end'>
                         <button 
                             type='submit' 
-                            className='bg-green-500 text-white px-5 py-2 rounded hover:bg-green-600'
+                            className='bg-blue-500 text-white px-5 py-2 rounded hover:bg-green-600'
                         >
                             Save
                         </button>

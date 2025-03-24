@@ -10,9 +10,7 @@ function MainLayout() {
         <div className='flex'>
             <Sidebar />
             <main className='flex-grow p-4'>
-                {/*
-                 Here Outlet Component is used instead of children props because in React Router 6 it hepls in rendering child routes.
-                */}
+                {/* Here Outlet Component is used instead of children props because in React Router 6 it hepls in rendering child routes.*/}
                 <Outlet />
             </main>
         </div>
