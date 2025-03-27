@@ -1,4 +1,4 @@
-import { ADD_DEALER, DELETE_DEALER } from "../actions/actionTypes"
+import { ADD_DEALER, DELETE_DEALER, UPDATE_DEALER } from "../actions/actionTypes"
 
 
 const initialState = {
@@ -13,6 +13,12 @@ function dealerReducer(state = initialState, action) {
         case DELETE_DEALER :
             return {...state, dealers : state.dealers.filter((d) => d.id !== action.payload)}
 
+        case UPDATE_DEALER :
+            return {
+                ...state,
+                dealers : state.dealers.map((dealers) => dealers.id === action.payload.id ? action.payload : dealers )
+            }
+        
         default :
             return state
     }
