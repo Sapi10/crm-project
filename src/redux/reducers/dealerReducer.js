@@ -16,7 +16,7 @@ function dealerReducer(state = initialState, action) {
         case UPDATE_DEALER :
             return {
                 ...state,
-                dealers : state.dealers.map((dealers) => dealers.id === action.payload.id ? action.payload : dealers )
+                dealers : state.dealers.map((dealer) => dealer.id === action.payload.id ? action.payload : dealer )
             }
         
         default :

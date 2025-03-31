@@ -30,12 +30,12 @@ function Dealers() {
     setIsModalOpen(false)
   }
 
-  const handleUpdate = (e) => {
+  const handleUpdateDealer = (e) => {
     e.preventDefault()
-    dispatch(updateDealer({...editDealer, dealersData}))
+    dispatch(updateDealer({...editDealer, ...dealersData}))
     setEditDealer(null)
     setDealersData({name: '', email: '', phone: ''})
-    setIsModalOpen(false)
+    setIsEditModalOpen(false)
   }
 
   const handleDelete =(id) =>{
@@ -57,7 +57,7 @@ function Dealers() {
         dealers.map((d) =>(
           [
             d.name, d.email, d.phone,
-            <div> 
+            <div className='flex'> 
               {/* Edit Button */}
               <button
                 className='text-blue-500 hover:text-red-500'
@@ -147,8 +147,8 @@ function Dealers() {
         </form>
       </Modal>
 
-      <EditModal isOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} onSubmit={handleUpdate} title="Update Dealer" >
-        <label>
+      <EditModal isOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} onSubmit={handleUpdateDealer} title="Update Dealer" >
+        <label className='block mb-2'>
           Name:
           <input 
             type='text'
@@ -168,6 +168,7 @@ function Dealers() {
             value={dealersData.email}
             onChange={(e) => setDealersData({...dealersData, email: e.target.value})}
             className='w-full rounded p-2 my-2 border'
+            required
           />
         </label>
         
@@ -179,6 +180,7 @@ function Dealers() {
             value={dealersData.phone}
             className='w-full rounded border p-2 my-2 '
             onChange={(e) => setDealersData({...dealersData, phone: e.target.value})}
+            required
           />
         </label>
 

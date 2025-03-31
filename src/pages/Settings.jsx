@@ -10,7 +10,7 @@ function Settings() {
             <input 
               type='email'
               placeholder='Enter Email'
-              className='w-96 p-2 border rounded my-2'
+              className='w-96 p-2 border-2 rounded my-2'
             />
           </label>
 
@@ -19,7 +19,7 @@ function Settings() {
             <input 
               type='text'
               placeholder='Enter Username'
-              className='w-96 p-2 border rounded my-2'
+              className='w-96 p-2 border-2 rounded my-2'
             />
           </label>
 

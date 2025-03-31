@@ -12,5 +12,5 @@ export const deleteDealer = (id) => ({
 
 export const updateDealer = (updatedDealer) =>({
     type : UPDATE_DEALER,
-    payload : updateDealer
+    payload : updatedDealer
 })
