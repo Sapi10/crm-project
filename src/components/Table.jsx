@@ -5,7 +5,7 @@ function Table({headers, data}) {
     // it accepts two props: headers and data
     // can be used to render data of both Dealers and Customers.
   return (
-    <div className='overflow-x-auto my-2'>
+    <div className='overflow-x-auto py-2'>
         <table className='min-w-full divide-y divide-gray-200'>
             <thead className='bg-gray-50'>
                 <tr>

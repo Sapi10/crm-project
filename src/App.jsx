@@ -9,13 +9,14 @@ import Reports from './pages/Reports'
 import Settings from './pages/Settings'
 import MainLayout from './layouts/MainLayout'
 import ProtectedLayout from './components/ProtectedLayout'
+import LandingPage from './pages/LandingPage'
 
 
 function App() {
   return (
     <Router>
           <Routes>
-            <Route path='/' element={<Login />} />
+            <Route path='/' element={<LandingPage />} />
             
               <Route element={<ProtectedLayout />}>
               {/* 
